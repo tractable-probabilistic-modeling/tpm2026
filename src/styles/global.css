@@ -1,6 +1,7 @@
 @layer theme, base, components, utilities;
 
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 @import '@heroui/styles';
 
 :root {
@@ -18,4 +19,12 @@ body {
 
 main {
   width: 100%;
+}
+
+@utility prose-tpm {
+  @apply prose prose-neutral max-w-none text-sm leading-7 text-foreground;
+  @apply prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-foreground;
+  @apply prose-p:text-foreground prose-strong:text-foreground prose-li:text-foreground;
+  @apply prose-a:text-link prose-a:no-underline hover:prose-a:underline;
+  @apply prose-ul:pl-5 prose-ol:pl-5;
 }

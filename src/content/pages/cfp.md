@@ -2,8 +2,7 @@
 title: Call for Papers
 description: Submission categories, topics, and deadlines for TPM 2026.
 ---
-
-We invite three types of submissions:
+**We invite three types of submissions:**
 
 1. Research papers that discuss novel TPM research.
 2. Retrospective papers discussing the impact, consequences, and lessons learned from classical TPM papers.

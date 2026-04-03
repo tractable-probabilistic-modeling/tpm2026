@@ -3,6 +3,7 @@ import { Card } from '@heroui/react';
 import { getCollection, render } from 'astro:content';
 
 import DatesSection from '../components/sections/DatesSection.astro';
+import Prose from '../components/ui/Prose.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -25,9 +26,9 @@ const { Content } = await render(cfpPage);
       description={cfpPage.data.description}
     />
     <Card className="px-5 py-6 sm:px-6" variant="default">
-      <div class="prose prose-neutral max-w-none text-sm leading-7 text-muted">
+      <Prose>
         <Content />
-      </div>
+      </Prose>
     </Card>
   </section>
 

@@ -8,6 +8,7 @@ import SpeakersSection from '../components/sections/SpeakersSection.astro';
 import ScheduleSection from '../components/sections/ScheduleSection.astro';
 import PapersSection from '../components/sections/PapersSection.astro';
 import OrganizersSection from '../components/sections/OrganizersSection.astro';
+import Prose from '../components/ui/Prose.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -65,9 +66,9 @@ const { Content } = await render(homePage);
       description="TPM 2026 focuses on tractable probabilistic models for trustworthy AI, with special attention to tensor networks and causality."
     />
     <Card className="rounded-2xl px-5 py-6 sm:px-6" variant="default">
-      <div class="prose prose-neutral max-w-none text-sm leading-7 text-muted">
+      <Prose>
         <Content />
-      </div>
+      </Prose>
     </Card>
   </section>
 
