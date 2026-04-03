@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+
+import PapersSection from '../components/sections/PapersSection.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const [siteEntry] = await getCollection('site');
+const [navigationEntry] = await getCollection('navigation');
+const papers = await getCollection('papers');
+const [papersPage] = await getCollection('pages', ({ id }) => id === 'papers');
+---
+
+<BaseLayout
+  description={papersPage.data.description}
+  navigationEntry={navigationEntry}
+  siteEntry={siteEntry}
+  title={`${papersPage.data.title} | TPM 2026`}
+>
+  <PapersSection papers={papers} showAcceptedPapers={siteEntry.data.showAcceptedPapers} />
+</BaseLayout>

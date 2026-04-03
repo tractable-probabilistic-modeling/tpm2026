@@ -1,0 +1,31 @@
+---
+import { Surface } from '@heroui/react';
+import { getCollection, render } from 'astro:content';
+
+import DatesSection from '../components/sections/DatesSection.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const [siteEntry] = await getCollection('site');
+const [navigationEntry] = await getCollection('navigation');
+const [cfpPage] = await getCollection('pages', ({ id }) => id === 'cfp');
+const { Content } = await render(cfpPage);
+---
+
+<BaseLayout
+  description={cfpPage.data.description}
+  navigationEntry={navigationEntry}
+  siteEntry={siteEntry}
+  title={`${cfpPage.data.title} | TPM 2026`}
+>
+  <section class="space-y-5">
+    <SectionHeading eyebrow="TPM 2026" title={cfpPage.data.title} description={cfpPage.data.description} />
+    <Surface className="px-5 py-6 sm:px-6" variant="default">
+      <div class="prose prose-neutral max-w-none text-sm leading-7 text-muted">
+        <Content />
+      </div>
+    </Surface>
+  </section>
+
+  <DatesSection site={siteEntry} />
+</BaseLayout>

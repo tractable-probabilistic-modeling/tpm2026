@@ -1,0 +1,47 @@
+[
+  {
+    "id": "welcome",
+    "time": "9:00 - 9:15",
+    "session": "Welcome and Best Paper Awards"
+  },
+  {
+    "id": "spotlights",
+    "time": "9:15 - 10:00",
+    "session": "Spotlight Presentations"
+  },
+  {
+    "id": "poster-session-1",
+    "time": "10:00 - 11:00",
+    "session": "Poster Session I and Coffee Break"
+  },
+  {
+    "id": "invited-talks-1",
+    "time": "11:00 - 12:30",
+    "session": "Invited Talks"
+  },
+  {
+    "id": "lunch",
+    "time": "12:30 - 14:00",
+    "session": "Lunch Break"
+  },
+  {
+    "id": "invited-talks-2",
+    "time": "14:00 - 15:30",
+    "session": "Invited Talks"
+  },
+  {
+    "id": "poster-session-2",
+    "time": "15:30 - 16:30",
+    "session": "Poster Session II and Coffee Break"
+  },
+  {
+    "id": "panel",
+    "time": "16:30 - 17:15",
+    "session": "Panel Discussion"
+  },
+  {
+    "id": "closing",
+    "time": "17:15 - 17:30",
+    "session": "Closing Remarks"
+  }
+]

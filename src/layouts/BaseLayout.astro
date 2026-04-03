@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import '../styles/global.css';
+import SiteShell from '../components/layout/SiteShell.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  siteEntry: CollectionEntry<'site'>;
+  navigationEntry: CollectionEntry<'navigation'>;
+}
+
+const { title, description, siteEntry, navigationEntry } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="light" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>{title}</title>
+    <meta content={description} name="description" />
+    <link href="/tpm2026/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+    <link href="/tpm2026/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/tpm2026/favicon.ico" rel="shortcut icon" />
+    <link href="/tpm2026/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <meta content="TPM 2026" name="apple-mobile-web-app-title" />
+    <link href="/tpm2026/site.webmanifest" rel="manifest" />
+  </head>
+  <body class="bg-background text-foreground">
+    <SiteShell currentPath={Astro.url.pathname.replace('/tpm2026', '')} navigation={navigationEntry} site={siteEntry}>
+      <slot />
+    </SiteShell>
+  </body>
+</html>

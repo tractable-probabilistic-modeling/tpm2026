@@ -1,0 +1,163 @@
+---
+import { Card, Link, Surface } from '@heroui/react';
+import { getCollection, render } from 'astro:content';
+
+import HeroSection from '../components/sections/HeroSection.astro';
+import DatesSection from '../components/sections/DatesSection.astro';
+import SpeakersSection from '../components/sections/SpeakersSection.astro';
+import ScheduleSection from '../components/sections/ScheduleSection.astro';
+import PapersSection from '../components/sections/PapersSection.astro';
+import OrganizersSection from '../components/sections/OrganizersSection.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import adrianjavaloy from '../assets/organizers/adrianjavaloy.png';
+import antoniovergari from '../assets/organizers/antoniovergari.jpg';
+import christophstaudt from '../assets/organizers/christophstaudt.png';
+import johnleland from '../assets/organizers/johnleland.jpg';
+import lennertdesmet from '../assets/organizers/lennertdesmet.png';
+import lingyunyao from '../assets/organizers/lingyunyao.jpg';
+import poorvagarg from '../assets/organizers/poorvagarg.jpg';
+import zhezheng from '../assets/organizers/zhezheng.jpeg';
+
+const [siteEntry] = await getCollection('site');
+const [navigationEntry] = await getCollection('navigation');
+const [homePage] = await getCollection('pages', ({ id }) => id === 'home');
+const speakers = await getCollection('speakers');
+const organizers = await getCollection('organizers');
+const papers = await getCollection('papers');
+const schedule = await getCollection('schedule');
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) => {
+  if (path === '/') {
+    return `${base.replace(/\/$/, '')}/`;
+  }
+
+  return `${base.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
+};
+
+const organizerImages = {
+  'adrianjavaloy.png': adrianjavaloy.src,
+  'antoniovergari.jpg': antoniovergari.src,
+  'christophstaudt.png': christophstaudt.src,
+  'johnleland.jpg': johnleland.src,
+  'lennertdesmet.png': lennertdesmet.src,
+  'lingyunyao.jpg': lingyunyao.src,
+  'poorvagarg.jpg': poorvagarg.src,
+  'zhezheng.jpeg': zhezheng.src,
+};
+
+const { Content } = await render(homePage);
+---
+
+<BaseLayout
+  description={siteEntry.data.description}
+  navigationEntry={navigationEntry}
+  siteEntry={siteEntry}
+  title={`${siteEntry.data.title} | TPM 2026`}
+>
+  <HeroSection home={homePage} site={siteEntry} />
+
+  <section class="space-y-5">
+    <SectionHeading
+      eyebrow="About"
+      title="Workshop overview"
+      description="TPM 2026 focuses on tractable probabilistic models for trustworthy AI, with special attention to tensor networks and causality."
+    />
+    <Surface className="rounded-2xl px-5 py-6 sm:px-6" variant="default">
+      <div class="prose prose-neutral max-w-none text-sm leading-7 text-muted">
+        <Content />
+      </div>
+    </Surface>
+  </section>
+
+  <DatesSection site={siteEntry} />
+
+  {siteEntry.data.showSpeakers ? <SpeakersSection speakers={speakers} /> : null}
+
+  <section class="grid gap-4 lg:grid-cols-2">
+    <Card variant="default">
+      <Card.Header>
+        <Card.Title>Workshop format</Card.Title>
+        <Card.Description
+          >Hybrid participation with in-person delivery and remote access.</Card.Description
+        >
+      </Card.Header>
+      <Card.Content className="space-y-3 text-sm leading-6 text-muted">
+        <p>
+          Presentations and talks will be held in person, streamed via Zoom, and recorded when
+          speakers agree. Accepted papers will have spotlight talks and poster sessions, with final
+          details published closer to the workshop.
+        </p>
+        <Link href={toHref('/program')}>
+          Read the tentative program
+          <Link.Icon />
+        </Link>
+      </Card.Content>
+    </Card>
+    <Card variant="default">
+      <Card.Header>
+        <Card.Title>Call for papers</Card.Title>
+        <Card.Description
+          >Novel research, retrospectives, and recently accepted TPM papers.</Card.Description
+        >
+      </Card.Header>
+      <Card.Content className="space-y-3 text-sm leading-6 text-muted">
+        <p>
+          We invite submissions across the TPM spectrum, including tractable reasoning, causal
+          inference, tensor factorizations, and trustworthy AI applications.
+        </p>
+        <Link href={toHref('/cfp')}>
+          Read the call for papers
+          <Link.Icon />
+        </Link>
+      </Card.Content>
+    </Card>
+  </section>
+
+  {siteEntry.data.showProgram ? <ScheduleSection schedule={schedule} /> : null}
+
+  <PapersSection papers={papers} showAcceptedPapers={siteEntry.data.showAcceptedPapers} />
+
+  <section class="space-y-5">
+    <SectionHeading
+      eyebrow="Conference"
+      title="UAI 2026"
+      description="TPM 2026 is part of the UAI 2026 workshop day in Amsterdam."
+    />
+    <Surface className="px-5 py-6 sm:px-6" variant="default">
+      <div class="space-y-4 text-sm leading-7 text-muted">
+        <p>{siteEntry.data.conferenceDescription}</p>
+        <ul class="list-disc space-y-2 pl-5">
+          <li>Tutorials: Monday, August 17th, 2026</li>
+          <li>Main conference: Tuesday, August 18th to Thursday, August 20th, 2026</li>
+          <li>Workshops: Friday, August 21st, 2026</li>
+        </ul>
+        <Link href={siteEntry.data.conferenceUrl} rel="noopener noreferrer" target="_blank">
+          Visit the UAI 2026 website
+          <Link.Icon />
+        </Link>
+      </div>
+    </Surface>
+  </section>
+
+  <section class="space-y-5">
+    <SectionHeading eyebrow="Archive" title="Previous TPM workshops" />
+    <Surface className="px-5 py-6 sm:px-6" variant="default">
+      <ul class="space-y-3 text-sm text-muted">
+        {
+          siteEntry.data.previousWorkshops.map(workshop => (
+            <li>
+              <Link href={workshop.url} rel="noopener noreferrer" target="_blank">
+                {workshop.title}
+                <Link.Icon />
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
+    </Surface>
+  </section>
+
+  <OrganizersSection imageMap={organizerImages} organizers={organizers} />
+</BaseLayout>

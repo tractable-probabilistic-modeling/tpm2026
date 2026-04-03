@@ -1,0 +1,22 @@
+[
+  {
+    "id": "placeholder-1",
+    "title": "Accepted papers will appear here soon",
+    "authors": "Coming soon",
+    "status": "Placeholder",
+    "pdfUrl": null,
+    "videoUrl": null,
+    "session": null,
+    "placeholder": true
+  },
+  {
+    "id": "placeholder-2",
+    "title": "Camera-ready and presentation details will follow",
+    "authors": "Coming soon",
+    "status": "Placeholder",
+    "pdfUrl": null,
+    "videoUrl": null,
+    "session": null,
+    "placeholder": true
+  }
+]

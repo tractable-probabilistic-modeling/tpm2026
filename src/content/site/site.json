@@ -1,0 +1,59 @@
+[
+  {
+    "id": "site",
+    "title": "The 9th Workshop on Tractable Probabilistic Modeling",
+    "subtitle": "From Tensor Networks to Causality and Beyond",
+    "description": "A workshop at UAI 2026 on tractable probabilistic modeling, highlighting recent connections to tensor factorizations, causality, and trustworthy AI.",
+    "conferenceName": "The Conference on Uncertainty in Artificial Intelligence (UAI 2026)",
+    "conferenceDescription": "The Conference on Uncertainty in Artificial Intelligence is one of the premier international conferences on research related to knowledge representation, learning, and reasoning in the presence of uncertainty. UAI is supported by the Association for Uncertainty in Artificial Intelligence and has been held annually since 1985.",
+    "conferenceUrl": "https://www.auai.org/uai2026/",
+    "workshopDate": "Friday, August 21st, 2026",
+    "location": "Amsterdam, the Netherlands",
+    "contactEmail": "tpmworkshop2026@gmail.com",
+    "openReviewUrl": "TBD",
+    "submissionTemplateUrl": "TBD",
+    "showAcceptedPapers": false,
+    "showSpeakers": true,
+    "showProgram": true,
+    "deadlines": [
+      {
+        "item": "Submission opening",
+        "date": "April 9, 2026 AoE"
+      },
+      {
+        "item": "Submission deadline",
+        "date": "June 12, 2026 AoE"
+      },
+      {
+        "item": "Notification of acceptance",
+        "date": "July 3, 2026 AoE"
+      }
+    ],
+    "previousWorkshops": [
+      {
+        "title": "7th Workshop on Tractable Probabilistic Modeling (2024)",
+        "url": "https://tractable-probabilistic-modeling.github.io/tpm2024/"
+      },
+      {
+        "title": "6th Workshop on Tractable Probabilistic Modeling (2023)",
+        "url": "https://tractable-probabilistic-modeling.github.io/tpm2023/"
+      },
+      {
+        "title": "5th Workshop on Tractable Probabilistic Modeling (2022)",
+        "url": "https://tractable-probabilistic-modeling.github.io/tpm2022/"
+      },
+      {
+        "title": "4th Workshop on Tractable Probabilistic Modeling (2021)",
+        "url": "https://sites.google.com/view/tpm2021"
+      },
+      {
+        "title": "3rd Workshop on Tractable Probabilistic Modeling (2019)",
+        "url": "https://sites.google.com/view/icmltpm2019/home"
+      },
+      {
+        "title": "2nd Workshop on Tractable Probabilistic Modeling (2018)",
+        "url": "https://sites.google.com/site/tpm2018ws"
+      }
+    ]
+  }
+]

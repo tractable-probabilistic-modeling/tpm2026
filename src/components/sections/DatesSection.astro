@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Card } from '@heroui/react';
+
+import SectionHeading from '../ui/SectionHeading.astro';
+
+interface Props {
+  site: CollectionEntry<'site'>;
+}
+
+const { site } = Astro.props;
+---
+
+<section class="space-y-5">
+  <SectionHeading
+    eyebrow="Information"
+    title="Important dates"
+    description="All deadlines are end-of-day AoE and will be updated here if details change."
+  />
+  <Card variant="default">
+    <Card.Content>
+      <div class="overflow-x-auto">
+        <table class="w-full border-separate border-spacing-0 text-left text-sm text-foreground">
+          <thead>
+            <tr>
+              <th class="border-b border-separator px-4 py-3 font-medium text-muted">Date</th>
+              <th class="border-b border-separator px-4 py-3 font-medium text-muted">Deadline</th>
+            </tr>
+          </thead>
+          <tbody>
+            {site.data.deadlines.map((item) => (
+              <tr>
+                <td class="border-b border-separator px-4 py-3 align-top">{item.date}</td>
+                <td class="border-b border-separator px-4 py-3 align-top">{item.item}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Card.Content>
+  </Card>
+</section>

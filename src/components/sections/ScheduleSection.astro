@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Card } from '@heroui/react';
+
+import SectionHeading from '../ui/SectionHeading.astro';
+
+interface Props {
+  schedule: CollectionEntry<'schedule'>[];
+}
+
+const { schedule } = Astro.props;
+---
+
+<section class="space-y-5">
+  <SectionHeading
+    eyebrow="Schedule"
+    title="Tentative workshop schedule"
+    description="This schedule is provisional and will be refined as invited talks and accepted papers are finalized."
+  />
+  <Card variant="default">
+    <Card.Content>
+      <div class="overflow-x-auto">
+        <table class="w-full border-separate border-spacing-0 text-left text-sm text-foreground">
+          <thead>
+            <tr>
+              <th class="border-b border-separator px-4 py-3 font-medium text-muted">Time</th>
+              <th class="border-b border-separator px-4 py-3 font-medium text-muted">Session</th>
+            </tr>
+          </thead>
+          <tbody>
+            {schedule.map((item) => (
+              <tr>
+                <td class="border-b border-separator px-4 py-3 align-top">{item.data.time}</td>
+                <td class="border-b border-separator px-4 py-3 align-top">{item.data.session}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Card.Content>
+  </Card>
+</section>

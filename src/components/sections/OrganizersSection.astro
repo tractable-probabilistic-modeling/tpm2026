@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Card, Link } from '@heroui/react';
+
+import SectionHeading from '../ui/SectionHeading.astro';
+
+interface Props {
+  organizers: CollectionEntry<'organizers'>[];
+  imageMap: Record<string, string>;
+}
+
+const { organizers, imageMap } = Astro.props;
+---
+
+<section class="space-y-5">
+  <SectionHeading
+    eyebrow="Organizers"
+    title="Workshop organizers"
+    description="The current organizer list is carried over as a placeholder and can be updated directly in the JSON collection."
+  />
+  <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    {organizers.map((organizer) => (
+      <Card variant="default">
+        <Card.Header className="gap-4">
+          {organizer.data.image && imageMap[organizer.data.image] ? (
+            <img
+              alt={organizer.data.name}
+              class="h-16 w-16 object-cover"
+              loading="lazy"
+              src={imageMap[organizer.data.image]}
+            />
+          ) : null}
+          <div>
+            <Card.Title>{organizer.data.name}</Card.Title>
+            <Card.Description>{organizer.data.affiliation}</Card.Description>
+          </div>
+        </Card.Header>
+        <Card.Footer>
+          <Link href={organizer.data.website} rel="noopener noreferrer" target="_blank">
+            Website
+            <Link.Icon />
+          </Link>
+        </Card.Footer>
+      </Card>
+    ))}
+  </div>
+</section>

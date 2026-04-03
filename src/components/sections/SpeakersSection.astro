@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Card, Link } from '@heroui/react';
+
+import SectionHeading from '../ui/SectionHeading.astro';
+
+interface Props {
+  speakers: CollectionEntry<'speakers'>[];
+}
+
+const { speakers } = Astro.props;
+---
+
+<section class="space-y-5">
+  <SectionHeading
+    eyebrow="Invited speakers"
+    title="Tentative invited speakers"
+    description="Our invited speakers span core TPM sub-communities, adjacent fields, and a broad range of geographical and career backgrounds."
+  />
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+    {speakers.map((speaker) => (
+      <Card variant="default">
+        <Card.Header>
+          <Card.Title>{speaker.data.name}</Card.Title>
+          <Card.Description>{speaker.data.affiliation}</Card.Description>
+        </Card.Header>
+        <Card.Content className="space-y-3 text-sm leading-6 text-muted">
+          <p>{speaker.data.note}</p>
+          {speaker.data.website ? (
+            <Link href={speaker.data.website} rel="noopener noreferrer" target="_blank">
+              Website
+              <Link.Icon />
+            </Link>
+          ) : (
+            <p>Website: TBD</p>
+          )}
+        </Card.Content>
+      </Card>
+    ))}
+  </div>
+</section>

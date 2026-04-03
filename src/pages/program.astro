@@ -1,0 +1,32 @@
+---
+import { Surface } from '@heroui/react';
+import { getCollection, render } from 'astro:content';
+
+import ScheduleSection from '../components/sections/ScheduleSection.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const [siteEntry] = await getCollection('site');
+const [navigationEntry] = await getCollection('navigation');
+const [programPage] = await getCollection('pages', ({ id }) => id === 'program');
+const schedule = await getCollection('schedule');
+const { Content } = await render(programPage);
+---
+
+<BaseLayout
+  description={programPage.data.description}
+  navigationEntry={navigationEntry}
+  siteEntry={siteEntry}
+  title={`${programPage.data.title} | TPM 2026`}
+>
+  <section class="space-y-5">
+    <SectionHeading eyebrow="TPM 2026" title={programPage.data.title} description={programPage.data.description} />
+    <Surface className="px-5 py-6 sm:px-6" variant="default">
+      <div class="prose prose-neutral max-w-none text-sm leading-7 text-muted">
+        <Content />
+      </div>
+    </Surface>
+  </section>
+
+  <ScheduleSection schedule={schedule} />
+</BaseLayout>

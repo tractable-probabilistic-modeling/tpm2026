@@ -1,0 +1,27 @@
+[
+  {
+    "id": "menu",
+    "items": [
+      {
+        "title": "Home",
+        "url": "/",
+        "key": "home"
+      },
+      {
+        "title": "Call for Papers",
+        "url": "/cfp",
+        "key": "cfp"
+      },
+      {
+        "title": "Program",
+        "url": "/program",
+        "key": "program"
+      },
+      {
+        "title": "Accepted Papers",
+        "url": "/papers",
+        "key": "papers"
+      }
+    ]
+  }
+]

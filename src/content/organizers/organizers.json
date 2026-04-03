@@ -1,0 +1,58 @@
+[
+  {
+    "id": "adrian-javaloy",
+    "name": "Adrián Javaloy",
+    "affiliation": "University of Edinburgh, UK",
+    "website": "https://adrianjav.github.io/",
+    "image": "adrianjavaloy.png"
+  },
+  {
+    "id": "poorva-garg",
+    "name": "Poorva Garg",
+    "affiliation": "University of California, Los Angeles, USA",
+    "website": "https://web.cs.ucla.edu/~poorvagarg/",
+    "image": "poorvagarg.jpg"
+  },
+  {
+    "id": "christoph-staudt",
+    "name": "Christoph Staudt",
+    "affiliation": "Friedrich Schiller University Jena, Germany",
+    "website": "https://www.linkedin.com/in/christoph-staudt-5450b6139/",
+    "image": "christophstaudt.png"
+  },
+  {
+    "id": "john-leland",
+    "name": "John Leland",
+    "affiliation": "Arizona State University, USA",
+    "website": "https://jsl339.github.io/",
+    "image": "johnleland.jpg"
+  },
+  {
+    "id": "lennert-de-smet",
+    "name": "Lennert De Smet",
+    "affiliation": "KU Leuven, Belgium",
+    "website": "https://lennertdesmet.github.io/",
+    "image": "lennertdesmet.png"
+  },
+  {
+    "id": "lingyun-yao",
+    "name": "Lingyun Yao",
+    "affiliation": "Aalto University, Finland",
+    "website": "https://lingyunyao.github.io/",
+    "image": "lingyunyao.jpg"
+  },
+  {
+    "id": "zhe-zeng",
+    "name": "Zhe Zeng",
+    "affiliation": "New York University, USA",
+    "website": "https://zzeng.me/",
+    "image": "zhezheng.jpeg"
+  },
+  {
+    "id": "antonio-vergari",
+    "name": "Antonio Vergari",
+    "affiliation": "University of Edinburgh, UK",
+    "website": "https://april-tools.github.io/",
+    "image": "antoniovergari.jpg"
+  }
+]

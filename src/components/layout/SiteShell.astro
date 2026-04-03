@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Surface } from '@heroui/react';
+
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  site: CollectionEntry<'site'>;
+  navigation: CollectionEntry<'navigation'>;
+  currentPath: string;
+}
+
+const { site, navigation, currentPath } = Astro.props;
+const isHome = currentPath === '' || currentPath === '/';
+---
+
+<div class="min-h-screen bg-background text-foreground">
+  <Header compact={isHome} site={site} navigation={navigation} currentPath={currentPath} />
+  <main id="main-content" class="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-6 sm:px-6 lg:px-8">
+    <slot />
+  </main>
+  <Footer site={site} navigation={navigation} />
+</div>
