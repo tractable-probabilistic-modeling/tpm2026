@@ -9,7 +9,7 @@ interface Props {
 
 const { site, navigation } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const items = navigation.data.items.filter((item) => {
+const items = navigation.data.items.filter(item => {
   if (item.key === 'papers' && !site.data.showAcceptedPapers) {
     return false;
   }
@@ -27,40 +27,36 @@ const toHref = (path: string) => {
 ---
 
 <footer class="mx-auto mt-8 w-full max-w-6xl px-4 pb-6 sm:px-6 lg:px-8">
-  <Surface className="px-5 py-6 sm:px-6" variant="secondary">
-    <div class="flex flex-col gap-6">
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="space-y-2">
-          <h2 class="text-sm font-semibold uppercase tracking-wide text-muted">TPM 2026</h2>
-          <p class="text-sm leading-6 text-muted">
-            {site.data.title}<br />
-            {site.data.workshopDate}<br />
-            {site.data.location}
-          </p>
-        </div>
-        <div class="space-y-2">
-          <h2 class="text-sm font-semibold uppercase tracking-wide text-muted">Navigation</h2>
-          <div class="flex flex-col gap-2 text-sm">
-            {items.map((item) => (
-              <Link href={toHref(item.url)}>{item.title}</Link>
-            ))}
-          </div>
-        </div>
-        <div class="space-y-2">
-          <h2 class="text-sm font-semibold uppercase tracking-wide text-muted">Contact</h2>
-          <div class="flex flex-col gap-2 text-sm text-muted">
-            <Link href={`mailto:${site.data.contactEmail}`}>{site.data.contactEmail}</Link>
-            <Link href={site.data.conferenceUrl} rel="noopener noreferrer" target="_blank">
-              UAI 2026 website
-              <Link.Icon />
-            </Link>
-          </div>
+  <div class="flex flex-col gap-6">
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="space-y-2">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-muted">TPM 2026</h2>
+        <p class="text-sm leading-6 text-muted">
+          {site.data.title}<br />
+          {site.data.workshopDate}<br />
+          {site.data.location}
+        </p>
+      </div>
+      <div class="space-y-2">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-muted">Navigation</h2>
+        <div class="flex flex-col gap-2 text-sm">
+          {items.map(item => <Link href={toHref(item.url)}>{item.title}</Link>)}
         </div>
       </div>
-      <Separator />
-      <p class="text-sm text-muted">
-        Built with Astro and HeroUI for a static GitHub Pages deployment.
-      </p>
+      <div class="space-y-2">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-muted">Contact</h2>
+        <div class="flex flex-col gap-2 text-sm text-muted">
+          <Link href={`mailto:${site.data.contactEmail}`}>{site.data.contactEmail}</Link>
+          <Link href={site.data.conferenceUrl} rel="noopener noreferrer" target="_blank">
+            UAI 2026 website
+            <Link.Icon />
+          </Link>
+        </div>
+      </div>
     </div>
-  </Surface>
+    <Separator />
+    <p class="text-sm text-muted">
+      Built with Astro and HeroUI for a static GitHub Pages deployment.
+    </p>
+  </div>
 </footer>

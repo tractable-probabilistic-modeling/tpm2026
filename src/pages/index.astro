@@ -64,11 +64,11 @@ const { Content } = await render(homePage);
       title="Workshop overview"
       description="TPM 2026 focuses on tractable probabilistic models for trustworthy AI, with special attention to tensor networks and causality."
     />
-    <Surface className="rounded-2xl px-5 py-6 sm:px-6" variant="default">
+    <Card className="rounded-2xl px-5 py-6 sm:px-6" variant="default">
       <div class="prose prose-neutral max-w-none text-sm leading-7 text-muted">
         <Content />
       </div>
-    </Surface>
+    </Card>
   </section>
 
   <DatesSection site={siteEntry} />
@@ -125,7 +125,7 @@ const { Content } = await render(homePage);
       title="UAI 2026"
       description="TPM 2026 is part of the UAI 2026 workshop day in Amsterdam."
     />
-    <Surface className="px-5 py-6 sm:px-6" variant="default">
+    <Card className="px-5 py-6 sm:px-6" variant="default">
       <div class="space-y-4 text-sm leading-7 text-muted">
         <p>{siteEntry.data.conferenceDescription}</p>
         <ul class="list-disc space-y-2 pl-5">
@@ -138,26 +138,24 @@ const { Content } = await render(homePage);
           <Link.Icon />
         </Link>
       </div>
-    </Surface>
-  </section>
-
-  <section class="space-y-5">
-    <SectionHeading eyebrow="Archive" title="Previous TPM workshops" />
-    <Surface className="px-5 py-6 sm:px-6" variant="default">
-      <ul class="space-y-3 text-sm text-muted">
-        {
-          siteEntry.data.previousWorkshops.map(workshop => (
-            <li>
-              <Link href={workshop.url} rel="noopener noreferrer" target="_blank">
-                {workshop.title}
-                <Link.Icon />
-              </Link>
-            </li>
-          ))
-        }
-      </ul>
-    </Surface>
+    </Card>
   </section>
 
   <OrganizersSection imageMap={organizerImages} organizers={organizers} />
+
+  <section class="space-y-5">
+    <SectionHeading eyebrow="Archive" title="Previous TPM workshops" />
+    <ul class="space-y-3 text-sm text-muted">
+      {
+        siteEntry.data.previousWorkshops.map(workshop => (
+          <li>
+            <Link href={workshop.url} rel="noopener noreferrer" target="_blank">
+              {workshop.title}
+              <Link.Icon />
+            </Link>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </BaseLayout>
