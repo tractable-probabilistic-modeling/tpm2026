@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { Card, Link } from '@heroui/react';
+import { Button, Card } from '@heroui/react';
 
 import SectionHeading from '../ui/SectionHeading.astro';
 
@@ -13,35 +13,44 @@ const { organizers, imageMap } = Astro.props;
 ---
 
 <section class="space-y-5">
-  <SectionHeading
-    eyebrow="Organizers"
-    title="Workshop organizers"
-    description="The current organizer list is carried over as a placeholder and can be updated directly in the JSON collection."
-  />
+  <SectionHeading eyebrow="Organizers" title="Workshop organizers" description="" />
   <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-    {organizers.map((organizer) => (
-      <Card variant="default">
-        <Card.Header className="gap-4">
-          {organizer.data.image && imageMap[organizer.data.image] ? (
-            <img
-              alt={organizer.data.name}
-              class="h-16 w-16 object-cover"
-              loading="lazy"
-              src={imageMap[organizer.data.image]}
-            />
-          ) : null}
-          <div>
-            <Card.Title>{organizer.data.name}</Card.Title>
-            <Card.Description>{organizer.data.affiliation}</Card.Description>
-          </div>
-        </Card.Header>
-        <Card.Footer>
-          <Link href={organizer.data.website} rel="noopener noreferrer" target="_blank">
-            Website
-            <Link.Icon />
-          </Link>
-        </Card.Footer>
-      </Card>
-    ))}
+    {
+      organizers.map(organizer => (
+        <Card className="min-h-[200px] rounded-3xl" variant="default">
+          <Card.Header className="flex flex-col items-center gap-4 text-center">
+            {organizer.data.image && imageMap[organizer.data.image] ? (
+              <img
+                alt={organizer.data.name}
+                class="h-40 w-40 rounded-full object-cover"
+                loading="lazy"
+                src={imageMap[organizer.data.image]}
+              />
+            ) : (
+              <div class="h-40 w-40 rounded-full bg-default-100" />
+            )}
+
+            <div class="space-y-1">
+              <Card.Title className="text-lg font-bold tracking-tight">
+                {organizer.data.name}
+              </Card.Title>
+              <Card.Description className="text-sm leading-5 text-muted">
+                {organizer.data.affiliation}
+              </Card.Description>
+            </div>
+          </Card.Header>
+          <Card.Footer className="mt-auto">
+            <a
+              href={organizer.data.website}
+              class="w-full button button--outline"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Website
+            </a>
+          </Card.Footer>
+        </Card>
+      ))
+    }
   </div>
 </section>

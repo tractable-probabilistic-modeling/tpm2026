@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { file, glob } from 'astro/loaders';
 
 const site = defineCollection({
-  loader: file('src/content/site/site.json'),
+  loader: file('src/content/site.json'),
   schema: z.object({
     title: z.string(),
     subtitle: z.string(),
@@ -34,7 +34,7 @@ const site = defineCollection({
 });
 
 const navigation = defineCollection({
-  loader: file('src/content/navigation/menu.json'),
+  loader: file('src/content/menu.json'),
   schema: z.object({
     items: z.array(
       z.object({
@@ -55,7 +55,7 @@ const pages = defineCollection({
 });
 
 const speakers = defineCollection({
-  loader: file('src/content/speakers/speakers.json'),
+  loader: file('src/content/speakers.json'),
   schema: z.object({
     id: z.string(),
     name: z.string(),
@@ -68,7 +68,7 @@ const speakers = defineCollection({
 });
 
 const organizers = defineCollection({
-  loader: file('src/content/organizers/organizers.json'),
+  loader: file('src/content/organizers.json'),
   schema: z.object({
     id: z.string(),
     name: z.string(),
@@ -79,7 +79,7 @@ const organizers = defineCollection({
 });
 
 const papers = defineCollection({
-  loader: file('src/content/papers/papers.json'),
+  loader: file('src/content/papers.json'),
   schema: z.object({
     id: z.string(),
     title: z.string(),
@@ -93,7 +93,7 @@ const papers = defineCollection({
 });
 
 const schedule = defineCollection({
-  loader: file('src/content/schedule/workshop.json'),
+  loader: file('src/content/workshop.json'),
   schema: z.object({
     time: z.string(),
     session: z.string(),

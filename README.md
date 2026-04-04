@@ -45,13 +45,13 @@ npm run preview
 
 Editable content lives in `src/content/`.
 
-- `src/content/site/site.json`: workshop-wide metadata, deadlines, feature flags
-- `src/content/navigation/menu.json`: main navigation items
+- `src/content/site.json`: workshop-wide metadata, deadlines, feature flags
+- `src/content/menu.json`: main navigation items
 - `src/content/pages/*.md`: page copy for home, CFP, program, and papers
-- `src/content/speakers/speakers.json`: invited speaker data
-- `src/content/organizers/organizers.json`: organizer data
-- `src/content/papers/papers.json`: accepted paper entries or placeholders
-- `src/content/schedule/workshop.json`: tentative workshop schedule
+- `src/content/speakers.json`: invited speaker data
+- `src/content/organizers.json`: organizer data
+- `src/content/papers.json`: accepted paper entries or placeholders
+- `src/content/workshop.json`: tentative workshop schedule
 
 ## Assets
 
@@ -61,7 +61,7 @@ Editable content lives in `src/content/`.
 
 ## Toggling accepted papers
 
-The accepted papers section is controlled by `showAcceptedPapers` in `src/content/site/site.json`.
+The accepted papers section is controlled by `showAcceptedPapers` in `src/content/site.json`.
 
 - `false`: hide the navigation item and show a coming-soon page
 - `true`: show the navigation item and render the paper entries from the collection

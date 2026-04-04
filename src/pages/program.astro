@@ -21,16 +21,12 @@ const { Content } = await render(programPage);
   title={`${programPage.data.title} | TPM 2026`}
 >
   <section class="space-y-5">
-    <SectionHeading
-      eyebrow="TPM 2026"
-      title={programPage.data.title}
-      description={programPage.data.description}
-    />
-    <Card className="px-5 py-6 sm:px-6" variant="default">
-      <Prose>
-        <Content />
-      </Prose>
-    </Card>
+    <SectionHeading eyebrow="TPM 2026" title={programPage.data.title} description={} />
+    <!-- <Card className="px-5 py-6 sm:px-6" variant="default"> -->
+    <Prose>
+      <Content />
+    </Prose>
+    <!-- </Card> -->
   </section>
 
   <ScheduleSection schedule={schedule} />

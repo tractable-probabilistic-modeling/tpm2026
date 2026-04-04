@@ -18,31 +18,33 @@ const { papers, showAcceptedPapers } = Astro.props;
     title="Accepted papers"
     description="The final accepted papers list will be published here once the review process is complete."
   />
-  {showAcceptedPapers ? (
-    <div class="grid gap-4 md:grid-cols-2">
-      {papers.map((paper) => (
-        <Card variant="default">
-          <Card.Header>
-            <Card.Title>{paper.data.title}</Card.Title>
-            <Card.Description>{paper.data.authors}</Card.Description>
-          </Card.Header>
-          <Card.Content className="space-y-2 text-sm text-muted">
-            <p>{paper.data.status}</p>
-            {paper.data.pdfUrl ? (
-              <Link href={paper.data.pdfUrl} rel="noopener noreferrer" target="_blank">
-                PDF
-                <Link.Icon />
-              </Link>
-            ) : null}
-          </Card.Content>
-        </Card>
-      ))}
-    </div>
-  ) : (
-    <Card variant="default">
-      <Card.Content className="space-y-3 text-sm leading-6 text-muted">
-        <p>Coming soon. The accepted papers page is already wired to the content collection and can be enabled with a single site setting later.</p>
-      </Card.Content>
-    </Card>
-  )}
+  {
+    showAcceptedPapers ? (
+      <div class="grid gap-4 md:grid-cols-2">
+        {papers.map(paper => (
+          <Card variant="default">
+            <Card.Header>
+              <Card.Title>{paper.data.title}</Card.Title>
+              <Card.Description>{paper.data.authors}</Card.Description>
+            </Card.Header>
+            <Card.Content className="space-y-2 text-sm text-muted">
+              <p>{paper.data.status}</p>
+              {paper.data.pdfUrl ? (
+                <Link href={paper.data.pdfUrl} rel="noopener noreferrer" target="_blank">
+                  PDF
+                  <Link.Icon />
+                </Link>
+              ) : null}
+            </Card.Content>
+          </Card>
+        ))}
+      </div>
+    ) : (
+      <Card variant="default">
+        <Card.Content className="space-y-3 text-sm leading-6 text-muted">
+          <p>Will be published after acceptance.</p>
+        </Card.Content>
+      </Card>
+    )
+  }
 </section>
