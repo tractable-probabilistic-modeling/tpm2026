@@ -1,5 +1,5 @@
 ---
-import { Card, Link, Surface } from '@heroui/react';
+import { Button, Card, Link } from '@heroui/react';
 import { getCollection, render } from 'astro:content';
 
 import HeroSection from '../components/sections/HeroSection.astro';
@@ -35,6 +35,11 @@ const toHref = (path: string) => {
   }
 
   return `${base.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
+};
+const archiveLabel = (title: string) => {
+  const year = title.match(/\b(20\d{2})\b/)?.[1];
+
+  return year ? `TPM ${year}` : 'TPM';
 };
 
 const organizerImages = {
@@ -146,14 +151,21 @@ const { Content } = await render(homePage);
 
   <section class="space-y-5">
     <SectionHeading eyebrow="Archive" title="Previous TPM workshops" />
-    <ul class="space-y-3 text-sm text-muted">
+    <ul class="flex flex-wrap justify-center gap-3">
       {
         siteEntry.data.previousWorkshops.map(workshop => (
           <li>
-            <Link href={workshop.url} rel="noopener noreferrer" target="_blank">
-              {workshop.title}
-              <Link.Icon />
-            </Link>
+            <Button asChild variant="outline">
+              <a
+                class="inline-flex items-center gap-2 whitespace-nowrap"
+                href={workshop.url}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {archiveLabel(workshop.title)}
+                <Link.Icon />
+              </a>
+            </Button>
           </li>
         ))
       }
