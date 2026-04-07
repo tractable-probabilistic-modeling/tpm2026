@@ -1,38 +1,38 @@
 [
-  {
-    "id": "chao-li",
-    "name": "Chao Li",
-    "affiliation": "Research Scientist at RIKEN, Japan",
-    "website": null,
-    "image": null,
-    "note": "Tentatively confirmed invited speaker.",
-    "tentative": true
-  },
-  {
-    "id": "luc-de-raedt",
-    "name": "Luc de Raedt",
-    "affiliation": "Full Professor at KU Leuven, Belgium",
-    "website": null,
-    "image": null,
-    "note": "Tentatively confirmed invited speaker.",
-    "tentative": true
-  },
-  {
-    "id": "ivan-oseledets",
-    "name": "Ivan Oseledets",
-    "affiliation": "Associate Professor at Skoltech, Russia",
-    "website": null,
-    "image": null,
-    "note": "Tentatively confirmed invited speaker.",
-    "tentative": true
-  },
-  {
-    "id": "isabel-valera",
-    "name": "Isabel Valera",
-    "affiliation": "Full Professor at Saarland University, Germany",
-    "website": null,
-    "image": null,
-    "note": "Tentatively confirmed invited speaker.",
-    "tentative": true
-  }
+    {
+        "id": "chao-li",
+        "name": "Chao Li",
+        "affiliation": "Research Scientist at RIKEN, Japan",
+        "website": "https://chaoliatriken.github.io/",
+        "image": null,
+        "note": "Tentatively confirmed invited speaker.",
+        "tentative": true
+    },
+    {
+        "id": "luc-de-raedt",
+        "name": "Luc de Raedt",
+        "affiliation": "Full Professor at KU Leuven, Belgium",
+        "website": "https://wms.cs.kuleuven.be/people/lucderaedt",
+        "image": null,
+        "note": "Tentatively confirmed invited speaker.",
+        "tentative": true
+    },
+    {
+        "id": "ivan-oseledets",
+        "name": "Ivan Oseledets",
+        "affiliation": "Associate Professor at Skoltech, Russia",
+        "website": "https://oseledets.github.io/",
+        "image": null,
+        "note": "Tentatively confirmed invited speaker.",
+        "tentative": true
+    },
+    {
+        "id": "isabel-valera",
+        "name": "Isabel Valera",
+        "affiliation": "Full Professor at Saarland University, Germany",
+        "website": "https://ivaleram.github.io/",
+        "image": null,
+        "note": "Tentatively confirmed invited speaker.",
+        "tentative": true
+    }
 ]
