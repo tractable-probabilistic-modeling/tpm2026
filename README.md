@@ -77,5 +77,4 @@ Repository settings should use:
 ## Notes
 
 - OpenReview URL is currently `TBD`
-- Speaker personal websites are currently `TBD`
 - Submission template URL is currently `TBD`
