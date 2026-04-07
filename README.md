@@ -26,7 +26,7 @@ npm install
 Start the dev server:
 
 ```bash
-npm run dev
+npm run dev -- --host
 ```
 
 Build the site:
