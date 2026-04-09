@@ -23,7 +23,9 @@ Topics of interest include, but are not limited to:
 ## Submission details
 
 We restrict the format to be up to 4 pages, excluding references, in the UAI format. All accepted papers and reviews will be publicly available via OpenReview. We will have one or two best paper awards assigned after a round of discussion among the program committee members and organizers.
-
-- OpenReview: TBD
-- Submission template: TBD
+ 
+- OpenReview: https://openreview.net/group?id=auai.org/UAI/2026/Workshop/TPM
+    - New profiles created without an institutional email will go through a moderation process that can take up to two weeks.
+    - New profiles created with an institutional email will be activated automatically.
+- [Submission template](/tpm2026/tpm2026-template.zip)
 - Contact: [tpmworkshop2026@gmail.com](mailto:tpmworkshop2026@gmail.com)
