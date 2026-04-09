@@ -47,5 +47,12 @@
     "affiliation": "New York University, USA",
     "website": "https://zzeng.me/",
     "image": "zhezheng.jpeg"
+  },
+  {
+    "id": "renato-geh",
+    "name": "Renato Geh",
+    "affiliation": "University of California, Los Angeles, USA",
+    "website": "https://cs.ucla.edu/~renatolg",
+    "image": "renatogeh.png"
   }
 ]
