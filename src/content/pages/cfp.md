@@ -22,7 +22,9 @@ Topics of interest include, but are not limited to:
 
 ## Submission details
 
-We restrict the format to be up to 4 pages, excluding references, in the UAI format. All accepted papers and reviews will be publicly available via OpenReview. We will have one or two best paper awards assigned after a round of discussion among the program committee members and organizers. For accepted submissions we will also invite the authors to submit a short video (up to 5 minutes) describing their work, which will be promoted on the workshop website.
+We restrict the format to be up to 4 pages, excluding references and appendices, in the UAI format. All accepted papers and reviews will be publicly available via OpenReview. Already accepted papers can be submitted in the format and length of the venue they have been accepted to. Supplementary material can be put in the same pdf paper (after references). It is entirely up to the reviewers to decide whether they wish to consult this additional material. Reviewing for TPM is double-blind; i.e., the identity of the authors is not revealed to the reviewers and vice versa, this excludes recently accepted papers, which will be reviewed single-blind. Therefore, you should refer to your prior work in the third person. We encourage links to public anonymous repositories such as GitHub to share code and/or data.
+
+We will have one or two best paper awards assigned after a round of discussion among the program committee members and organizers. For accepted submissions we will also invite the authors to submit a short video (up to 5 minutes) describing their work, which will be promoted on the workshop website.
  
 - OpenReview: https://openreview.net/group?id=auai.org/UAI/2026/Workshop/TPM
     - New profiles created without an institutional email will go through a moderation process that can take up to two weeks.
