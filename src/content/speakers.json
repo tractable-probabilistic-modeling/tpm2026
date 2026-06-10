@@ -5,26 +5,26 @@
         "affiliation": "Research Scientist at RIKEN, Japan",
         "website": "https://chaoliatriken.github.io/",
         "image": null,
-        "note": "Tentatively confirmed invited speaker.",
-        "tentative": true
+        "note": "Confirmed invited speaker.",
+        "tentative": false
     },
     {
-        "id": "luc-de-raedt",
-        "name": "Luc de Raedt",
-        "affiliation": "Full Professor at KU Leuven, Belgium",
-        "website": "https://wms.cs.kuleuven.be/people/lucderaedt",
+        "id": "giuseppe-marra",
+        "name": "Giuseppe Marra",
+        "affiliation": "Assistant Professor at KU Leuven, Belgium",
+        "website": "https://www.giuseppemarra.com/",
         "image": null,
-        "note": "Tentatively confirmed invited speaker.",
-        "tentative": true
+        "note": "Confirmed invited speaker.",
+        "tentative": false
     },
     {
-        "id": "ivan-oseledets",
-        "name": "Ivan Oseledets",
-        "affiliation": "Associate Professor at Skoltech, Russia",
-        "website": "https://oseledets.github.io/",
+        "id": "eleonora-giunchiglia",
+        "name": "Eleonora Giunchiglia",
+        "affiliation": "Assistant Professor at Imperial College London, UK",
+        "website": "https://profiles.imperial.ac.uk/e.giunchiglia",
         "image": null,
-        "note": "Tentatively confirmed invited speaker.",
-        "tentative": true
+        "note": "Confirmed invited speaker.",
+        "tentative": false
     },
     {
         "id": "isabel-valera",
