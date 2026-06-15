@@ -25,14 +25,5 @@
         "image": null,
         "note": "Confirmed invited speaker.",
         "tentative": false
-    },
-    {
-        "id": "isabel-valera",
-        "name": "Isabel Valera",
-        "affiliation": "Full Professor at Saarland University, Germany",
-        "website": "https://ivaleram.github.io/",
-        "image": null,
-        "note": "Tentatively confirmed invited speaker.",
-        "tentative": true
     }
 ]
