@@ -25,5 +25,23 @@
         "image": null,
         "note": "Confirmed invited speaker.",
         "tentative": false
+    },
+    {
+        "id": "steven-holtzen",
+        "name": "Steven Holtzen",
+        "affiliation": "Assistant Professor at Northeastern University, US",
+        "website": "https://www.khoury.northeastern.edu/home/sholtzen/",
+        "image": null,
+        "note": "Confirmed invited speaker.",
+        "tentative": false
+    },
+    {
+        "id": "kyle-richardson",
+        "name": "Kyle Richardson",
+        "affiliation": "Senior Research Scientist at AI2, US",
+        "website": "https://www.nlp-kyle.com/",
+        "image": null,
+        "note": "Confirmed invited speaker.",
+        "tentative": false
     }
 ]
