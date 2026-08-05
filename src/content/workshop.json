@@ -1,47 +1,57 @@
 [
   {
     "id": "welcome",
-    "time": "9:00 - 9:15",
+    "time": "09:00 - 09:15",
     "session": "Welcome and Best Paper Awards"
   },
   {
-    "id": "spotlights",
-    "time": "9:15 - 10:00",
-    "session": "Spotlight Presentations"
+    "id": "talk-steven",
+    "time": "09:15 - 10:00",
+    "session": "From TPMs to Programming Languages and Back Again (Steven Holtzen, Northeastern University)"
+  },
+  {
+    "id": "coffee-1",
+    "time": "10:00 - 10:30",
+    "session": "Coffee break"
   },
   {
     "id": "poster-session-1",
-    "time": "10:00 - 11:00",
-    "session": "Poster Session I and Coffee Break"
+    "time": "10:30 - 11:15",
+    "session": "Poster Session I"
   },
   {
-    "id": "invited-talks-1",
-    "time": "11:00 - 12:30",
-    "session": "Invited Talks"
+    "id": "talk-chao",
+    "time": "11:15 - 12:00",
+    "session": "On Approximation Complexity of Matrix Product Operator Born Machines (Chao Li, RIKEN)"
   },
   {
     "id": "lunch",
-    "time": "12:30 - 14:00",
-    "session": "Lunch Break"
+    "time": "12:00 - 14:00",
+    "session": "Lunch"
   },
   {
-    "id": "invited-talks-2",
-    "time": "14:00 - 15:30",
-    "session": "Invited Talks"
+    "id": "talk-giuseppe",
+    "time": "14:00 - 14:45",
+    "session": "Deep Probabilistic Logics: from statistical relational to neurosymbolic AI (Giuseppe Marra, KU Leuven)"
+  },
+  {
+    "id": "talk-eleonora",
+    "time": "14:45 - 15:30",
+    "session": "Can Requirements Make Machine Learning Safer? From constrained prediction to structured generation (Eleonora Giunchiglia, Imperial College London)"
+  },
+  {
+    "id": "coffee-2",
+    "time": "15:30 - 16:00",
+    "session": "Coffee break"
   },
   {
     "id": "poster-session-2",
-    "time": "15:30 - 16:30",
-    "session": "Poster Session II and Coffee Break"
+    "time": "16:00 - 16:45",
+    "session": "Poster Session II"
   },
   {
-    "id": "panel",
-    "time": "16:30 - 17:15",
-    "session": "Panel Discussion"
-  },
-  {
-    "id": "closing",
-    "time": "17:15 - 17:30",
-    "session": "Closing Remarks"
+    "id": "talk-kyle",
+    "time": "16:45 - 17:30",
+    "session": "TBD (Kyle Richardson, AI2)"
   }
 ]
