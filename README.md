@@ -66,6 +66,19 @@ The accepted papers section is controlled by `showAcceptedPapers` in `src/conten
 - `false`: hide the navigation item and show a coming-soon page
 - `true`: show the navigation item and render the paper entries from the collection
 
+## Syncing accepted papers from OpenReview
+
+Run the authenticated sync command and enter the program-chair credentials when prompted:
+
+```bash
+npm run sync:papers
+```
+
+The command fetches notes accepted to the `TPM 2026` venue, downloads their PDFs to
+`public/papers/`, and regenerates `src/content/papers.json`. Credentials can alternatively
+be supplied through `OPENREVIEW_USERNAME` and `OPENREVIEW_PASSWORD`, or through an existing
+`OPENREVIEW_TOKEN`; they are never written to the repository.
+
 ## Deployment
 
 GitHub Pages deployment is configured in `.github/workflows/deploy.yml` using Astro's official GitHub Action.

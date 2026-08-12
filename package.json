@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "sync:papers": "python3 scripts/sync_openreview_papers.py",
     "astro": "astro"
   },
   "dependencies": {

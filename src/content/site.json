@@ -12,7 +12,7 @@
     "contactEmail": "tpmworkshop2026@gmail.com",
     "openReviewUrl": "https://openreview.net/group?id=auai.org/UAI/2026/Workshop/TPM",
     "submissionTemplateUrl": "TBD",
-    "showAcceptedPapers": false,
+    "showAcceptedPapers": true,
     "showSpeakers": true,
     "showProgram": true,
     "deadlines": [

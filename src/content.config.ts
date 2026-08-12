@@ -86,6 +86,7 @@ const papers = defineCollection({
     authors: z.string(),
     status: z.string(),
     pdfUrl: z.string().nullable(),
+    forumUrl: z.string().url().nullable(),
     videoUrl: z.string().nullable(),
     session: z.string().nullable(),
     placeholder: z.boolean(),

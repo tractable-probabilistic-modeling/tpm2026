@@ -10,32 +10,41 @@ interface Props {
 }
 
 const { papers, showAcceptedPapers } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const paperCount = papers.length;
+const paperFileUrl = (path: string) => `${base}/${path.replace(/^\//, '')}`;
 ---
 
 <section class="space-y-5">
   <SectionHeading
     eyebrow="Accepted papers"
     title="Accepted papers"
-    description="The final accepted papers list will be published here once the review process is complete."
+    description={showAcceptedPapers
+      ? `${paperCount} papers were accepted to TPM 2026.`
+      : 'The final accepted papers list will be published here once the review process is complete.'}
   />
   {
     showAcceptedPapers ? (
-      <div class="grid gap-4 md:grid-cols-2">
+      <div class="grid items-stretch gap-4 md:grid-cols-2">
         {papers.map(paper => (
-          <Card variant="default">
+          <Card className="h-full" role="article">
             <Card.Header>
               <Card.Title>{paper.data.title}</Card.Title>
               <Card.Description>{paper.data.authors}</Card.Description>
             </Card.Header>
-            <Card.Content className="space-y-2 text-sm text-muted">
-              <p>{paper.data.status}</p>
+            <Card.Footer className="mt-auto flex flex-wrap items-center gap-4 text-sm">
               {paper.data.pdfUrl ? (
-                <Link href={paper.data.pdfUrl} rel="noopener noreferrer" target="_blank">
-                  PDF
-                  <Link.Icon />
+                <Link href={paperFileUrl(paper.data.pdfUrl)} target="_blank">
+                  Read PDF
                 </Link>
               ) : null}
-            </Card.Content>
+              {paper.data.forumUrl ? (
+                <Link href={paper.data.forumUrl} rel="noopener noreferrer" target="_blank">
+                  OpenReview
+                  <Link.Icon aria-hidden="true" />
+                </Link>
+              ) : null}
+            </Card.Footer>
           </Card>
         ))}
       </div>
