@@ -1,51 +1,104 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { Card, Link } from '@heroui/react';
+import { Button, Card, Link } from '@heroui/react';
 
 import SectionHeading from '../ui/SectionHeading.astro';
 
 interface Props {
   papers: CollectionEntry<'papers'>[];
   showAcceptedPapers: boolean;
+  summaryOnly?: boolean;
 }
 
-const { papers, showAcceptedPapers } = Astro.props;
+const { papers, showAcceptedPapers, summaryOnly = false } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const paperCount = papers.length;
+const sortedPapers = [...papers].sort((left, right) =>
+  left.data.title.localeCompare(right.data.title, 'en', { sensitivity: 'base' }),
+);
 const paperFileUrl = (path: string) => `${base}/${path.replace(/^\//, '')}`;
+const papersPageUrl = `${base}/papers`;
 ---
 
-<section class="space-y-5">
-  <SectionHeading
-    eyebrow="Accepted papers"
-    title="Accepted papers"
-    description={showAcceptedPapers
-      ? `${paperCount} papers were accepted to TPM 2026.`
-      : 'The final accepted papers list will be published here once the review process is complete.'}
-  />
+{
+  summaryOnly && showAcceptedPapers ? (
+    <section class="space-y-5" aria-labelledby="accepted-papers-summary">
+      <div class="space-y-2">
+        <p class="text-sm font-semibold uppercase tracking-wide text-muted">Accepted papers</p>
+        <h2
+          class="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+          id="accepted-papers-summary"
+        >
+          {paperCount} papers accepted to TPM 2026
+        </h2>
+        <p class="max-w-2xl text-sm leading-6 text-muted">
+          Explore every paper, with authors, abstracts, PDFs, and OpenReview links.
+        </p>
+      </div>
+      <Button asChild>
+        <a href={papersPageUrl}>View accepted papers</a>
+      </Button>
+    </section>
+  ) : (
+    <section class="space-y-6">
+      <SectionHeading
+        eyebrow="TPM 2026"
+        title="Accepted papers"
+        description={showAcceptedPapers
+          ? `${paperCount} papers were accepted to TPM 2026.`
+          : 'The final accepted papers list will be published here once the review process is complete.'}
+      />
   {
     showAcceptedPapers ? (
-      <div class="grid items-stretch gap-4 md:grid-cols-2">
-        {papers.map(paper => (
-          <Card className="h-full" role="article">
-            <Card.Header>
-              <Card.Title>{paper.data.title}</Card.Title>
-              <Card.Description>{paper.data.authors}</Card.Description>
-            </Card.Header>
-            <Card.Footer className="mt-auto flex flex-wrap items-center gap-4 text-sm">
-              {paper.data.pdfUrl ? (
-                <Link href={paperFileUrl(paper.data.pdfUrl)} target="_blank">
-                  Read PDF
-                </Link>
-              ) : null}
-              {paper.data.forumUrl ? (
-                <Link href={paper.data.forumUrl} rel="noopener noreferrer" target="_blank">
-                  OpenReview
-                  <Link.Icon aria-hidden="true" />
-                </Link>
-              ) : null}
-            </Card.Footer>
-          </Card>
+      <div class="mx-auto grid max-w-4xl gap-3 sm:gap-5">
+        {sortedPapers.map(paper => (
+          <article>
+            <Card className="overflow-hidden p-0">
+              <Card.Header className="gap-0 px-4 pb-0 pt-4 sm:px-6 sm:pt-6">
+                <Card.Title className="text-lg leading-snug sm:text-xl">
+                  {paper.data.title}
+                </Card.Title>
+              </Card.Header>
+              <Card.Content className="space-y-4 px-4 py-4 sm:space-y-5 sm:px-6 sm:py-5">
+                <div class="space-y-1.5">
+                  <p class="text-xs font-medium text-muted">Authors</p>
+                  <p class="text-sm leading-6 text-foreground">{paper.data.authors}</p>
+                </div>
+                {paper.data.abstract ? (
+                  <div class="space-y-1.5">
+                    <p class="text-xs font-medium text-muted">Abstract</p>
+                    <details class="group">
+                      <summary class="cursor-[var(--cursor-interactive)] list-none [&::-webkit-details-marker]:hidden">
+                        <span class="line-clamp-2 text-sm leading-6 text-muted group-open:hidden">
+                          {paper.data.abstract}
+                        </span>
+                        <span class="mt-1.5 inline-block text-sm font-medium text-link group-open:hidden">
+                          Read abstract
+                        </span>
+                        <span class="hidden text-sm font-medium text-link group-open:inline-block">
+                          Hide abstract
+                        </span>
+                      </summary>
+                      <p class="mt-2 text-sm leading-6 text-muted">{paper.data.abstract}</p>
+                    </details>
+                  </div>
+                ) : null}
+              </Card.Content>
+              <Card.Footer className="flex flex-wrap items-center gap-4 px-4 pb-4 pt-0 text-sm sm:px-6 sm:pb-6">
+                {paper.data.pdfUrl ? (
+                  <Link href={paperFileUrl(paper.data.pdfUrl)} target="_blank">
+                    Read PDF
+                  </Link>
+                ) : null}
+                {paper.data.forumUrl ? (
+                  <Link href={paper.data.forumUrl} rel="noopener noreferrer" target="_blank">
+                    OpenReview
+                    <Link.Icon aria-hidden="true" />
+                  </Link>
+                ) : null}
+              </Card.Footer>
+            </Card>
+          </article>
         ))}
       </div>
     ) : (
@@ -56,4 +109,6 @@ const paperFileUrl = (path: string) => `${base}/${path.replace(/^\//, '')}`;
       </Card>
     )
   }
-</section>
+    </section>
+  )
+}

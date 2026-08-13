@@ -1,6 +1,4 @@
 ---
 title: Accepted Papers
-description: Placeholder for the accepted papers list.
+description: Accepted papers presented at the TPM 2026 workshop.
 ---
-
-The accepted papers list will appear here once the review process is complete.

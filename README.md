@@ -75,9 +75,17 @@ npm run sync:papers
 ```
 
 The command fetches notes accepted to the `TPM 2026` venue, downloads their PDFs to
-`public/papers/`, and regenerates `src/content/papers.json`. Credentials can alternatively
+`public/papers/`, and regenerates `src/content/papers.json`, including abstracts. Credentials can alternatively
 be supplied through `OPENREVIEW_USERNAME` and `OPENREVIEW_PASSWORD`, or through an existing
 `OPENREVIEW_TOKEN`; they are never written to the repository.
+
+To backfill abstracts from PDFs that have already been downloaded, without OpenReview access, run:
+
+```bash
+python3 scripts/sync_openreview_papers.py --abstracts-from-pdfs
+```
+
+This fallback requires the `pypdf` package.
 
 ## Deployment
 

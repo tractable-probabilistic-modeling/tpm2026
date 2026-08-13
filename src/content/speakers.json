@@ -1,47 +1,57 @@
 [
-    {
-        "id": "chao-li",
-        "name": "Chao Li",
-        "affiliation": "Research Scientist at RIKEN, Japan",
-        "website": "https://chaoliatriken.github.io/",
-        "image": null,
-        "note": "Confirmed invited speaker.",
-        "tentative": false
-    },
-    {
-        "id": "giuseppe-marra",
-        "name": "Giuseppe Marra",
-        "affiliation": "Assistant Professor at KU Leuven, Belgium",
-        "website": "https://www.giuseppemarra.com/",
-        "image": null,
-        "note": "Confirmed invited speaker.",
-        "tentative": false
-    },
-    {
-        "id": "eleonora-giunchiglia",
-        "name": "Eleonora Giunchiglia",
-        "affiliation": "Assistant Professor at Imperial College London, UK",
-        "website": "https://the-duck-lab.github.io/members/Eleonora_Giunchiglia.html",
-        "image": null,
-        "note": "Confirmed invited speaker.",
-        "tentative": false
-    },
-    {
-        "id": "steven-holtzen",
-        "name": "Steven Holtzen",
-        "affiliation": "Assistant Professor at Northeastern University, US",
-        "website": "https://www.khoury.northeastern.edu/home/sholtzen/",
-        "image": null,
-        "note": "Confirmed invited speaker.",
-        "tentative": false
-    },
-    {
-        "id": "kyle-richardson",
-        "name": "Kyle Richardson",
-        "affiliation": "Senior Research Scientist at AI2, US",
-        "website": "https://www.nlp-kyle.com/",
-        "image": null,
-        "note": "Confirmed invited speaker.",
-        "tentative": false
-    }
+  {
+    "id": "chao-li",
+    "name": "Chao Li",
+    "affiliation": "Research Scientist at RIKEN-AIP, Japan",
+    "website": "https://chaoliatriken.github.io/",
+    "image": "chao.jpg",
+    "scheduleOrder": 2,
+    "talkTitle": "On Approximation Complexity of Matrix Product Operator Born Machines",
+    "abstract": "Matrix Product Operator Born Machines (MPO-BMs) are tensor-network-based probabilistic generative models with favorable computational properties. In this talk, I will present recent results on their approximation complexity, including NP-hardness results for KL approximation in the worst case, as well as positive results showing efficient approximation and learning guarantees for structured probability distributions satisfying locality and spectral-gap conditions. I will conclude by discussing implications for tensor-network generative modeling and AI for Science.",
+    "bio": "Chao Li is an indefinite-term Research Scientist at RIKEN-AIP, Japan. His research lies at the intersection of tensor networks, AI for Science, and Quantum AI, with a focus on tractable generative modeling and theoretical foundations of machine learning. He has published multiple papers at top-tier international conferences, including ICML, NeurIPS, ICLR, CVPR, ECCV, AAAI, and AISTATS, with several selected for oral or spotlight presentations. He has served as an Area Chair, program committee member, and reviewer for major international conferences such as ICML, NeurIPS, ICLR, AAAI, and IJCAI. He has also organized workshops on low-rank representation learning at AAAI 2025 and ICML 2026, and organized and delivered the IJCAI 2025 tutorial “AI Meets Algebra: Foundations and Frontiers.”"
+  },
+  {
+    "id": "giuseppe-marra",
+    "name": "Giuseppe Marra",
+    "affiliation": "Assistant Professor at KU Leuven, Belgium",
+    "website": "https://www.giuseppemarra.com/",
+    "image": "giuseppe.webp",
+    "scheduleOrder": 3,
+    "talkTitle": "Deep Probabilistic Logics: from statistical relational to neurosymbolic AI",
+    "abstract": "This talk presents a unified formal perspective on neurosymbolic methods, which combine learning and reasoning in AI, showing how many seemingly different approaches can be understood through the lens of deep probabilistic logics. It further illustrates how this perspective can provide a foundational semantic substrate for emulating existing approaches and developing the next generation of neurosymbolic methods.",
+    "bio": "Giuseppe Marra is an Assistant Professor in the Declarative Languages and Artificial Intelligence (DTAI) research group at KU Leuven, where he co-leads the DeepLog team. His research focuses on the integration of neural computation and symbolic reasoning, with an emphasis on logical and probabilistic methods for neurosymbolic AI. He has contributed to several prototypical neurosymbolic frameworks and works on foundations and applications of neurosymbolic learning in areas such as concept-based interpretable deep models and safe reinforcement learning."
+  },
+  {
+    "id": "eleonora-giunchiglia",
+    "name": "Eleonora Giunchiglia",
+    "affiliation": "Assistant Professor at Imperial College London, UK",
+    "website": "https://profiles.imperial.ac.uk/e.giunchiglia",
+    "image": "eleonora.jpg",
+    "scheduleOrder": 4,
+    "talkTitle": "Can Requirements Make Machine Learning Safer? From constrained prediction to structured generation",
+    "abstract": "As machine learning systems move from narrow prediction tasks to generative and decision-making settings, their ability to satisfy domain requirements is becoming increasingly important. Yet deep neural networks can still produce outputs that violate even simple logical, structural, or regulatory constraints. This talk argues that requirements should be treated as first-class citizens in machine learning: not only as criteria for evaluating a model after deployment, but as objects that can shape what models learn, generate, and optimize for from the outset. I will show how logical requirements can define safe output spaces and be compiled into neural architectures, enabling predictions and generations that are compliant by design. Through examples in autonomous driving, tabular data generation, and neurosymbolic reasoning, the talk will illustrate how requirements can make learning systems safer, more data-efficient, and better aligned with the structure of the problems they are meant to solve.",
+    "bio": "Eleonora Giunchiglia is an Assistant Professor in the Department of Electrical and Electronic Engineering at Imperial College London and the Principal Investigator of the DUCK Lab, which focuses on Data, Uncertainty, Constraints and Knowledge. She completed her DPhil at the University of Oxford in 2022 and subsequently held a postdoctoral position at TU Wien before joining Imperial in 2024. Her research lies at the intersection of machine learning and formal reasoning, with a focus on neurosymbolic AI. In particular, she develops methods that integrate logical constraints, background knowledge, and formal requirements into neural models, with the goal of making AI systems safer, more reliable, and more trustworthy."
+  },
+  {
+    "id": "steven-holtzen",
+    "name": "Steven Holtzen",
+    "affiliation": "Assistant Professor at Northeastern University, US",
+    "website": "https://www.khoury.northeastern.edu/home/sholtzen/",
+    "image": "steven.png",
+    "scheduleOrder": 1,
+    "talkTitle": "From TPMs to Programming Languages and Back Again",
+    "abstract": "Tractable probabilistic models (TPMs) have slowly but steadily become a standard method for probabilistic reasoning in the programming languages community, with several papers published this year in top-tier venues that make use of TPMs for performing probabilistic reasoning. I think this is the beginning of exciting cross-pollination of these communities. My goal in this talk is to (1) explain to you why the programming languages community cares about and uses probability; (2) show you why TPMs are steadily becoming a standard tool within that community for solving their problems; and (3) point towards future opportunities for collaboration between communities. Along the way, I will give you a flavor of how the programming languages person thinks.",
+    "bio": "Steven Holtzen is an assistant professor and programming languages researcher at Northeastern University. His research focuses on designing tools and foundations for reasoning about programs with probabilistic behavior. He received his PhD in computer science from the University of California, Los Angeles in 2021. His work has been recognized by two ACM SIGPLAN distinguished paper awards and an NSF CAREER award."
+  },
+  {
+    "id": "kyle-richardson",
+    "name": "Kyle Richardson",
+    "affiliation": "Senior Research Scientist at the Allen Institute for AI, US",
+    "website": "https://www.nlp-kyle.com/",
+    "image": "kyle.jpeg",
+    "scheduleOrder": 5,
+    "talkTitle": "Tractable Language Model Programming: Themes and Prospects",
+    "abstract": "Modern AI systems increasingly couple LLMs with other components and tools, raising a natural question: how can users and developers compose these elements into coherent systems that achieve their goals? In this talk, I will argue that many approaches to designing and using LLM-based systems can be recast as building high-level programs on top of LLMs. Viewing these systems as programs allows us to formally describe their structure and reason about their behavior. I will illustrate this perspective through my recent work using probabilistic programming and tractable probabilistic semantics to study model evaluation, loss design, test-time inference, and agentic workflow modeling. I will describe how reasoning with LLMs opens new applications for tractable inference and reveals practically important special cases that admit unusually simple solutions, potentially offering broader insights into tractability.",
+    "bio": "Kyle Richardson is a senior research scientist at the Allen Institute for AI (Ai2) in Seattle. His research lies at the intersection of natural language processing and machine learning, with a particular focus on core language model development and applications. Recently, he has been exploring how formal methods can help us better understand and design algorithms for language models. Before joining Ai2, he was at the University of Stuttgart, where he earned his PhD in 2018."
+  }
 ]

@@ -6,36 +6,73 @@ import SectionHeading from '../ui/SectionHeading.astro';
 
 interface Props {
   speakers: CollectionEntry<'speakers'>[];
+  imageMap: Record<string, string>;
 }
 
-const { speakers } = Astro.props;
+const { speakers, imageMap } = Astro.props;
+const sortedSpeakers = [...speakers].sort(
+  (a, b) => a.data.scheduleOrder - b.data.scheduleOrder,
+);
 ---
 
 <section class="space-y-5">
   <SectionHeading
     eyebrow="Invited speakers"
-    title="Tentative invited speakers"
-    description="Our invited speakers span core TPM sub-communities, adjacent fields, and a broad range of geographical and career backgrounds."
+    title="Meet our invited speakers"
+    description="Five perspectives spanning tensor networks, neurosymbolic AI and probabilistic programming languages."
   />
-  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-    {speakers.map((speaker) => (
-      <Card variant="default">
-        <Card.Header>
-          <Card.Title>{speaker.data.name}</Card.Title>
-          <Card.Description>{speaker.data.affiliation}</Card.Description>
-        </Card.Header>
-        <Card.Content className="space-y-3 text-sm leading-6 text-muted">
-          <p>{speaker.data.note}</p>
-          {speaker.data.website ? (
-            <Link href={speaker.data.website} rel="noopener noreferrer" target="_blank">
-              Website
-              <Link.Icon />
-            </Link>
-          ) : (
-            <p>Website: TBD</p>
-          )}
-        </Card.Content>
-      </Card>
-    ))}
+  <div class="space-y-4">
+    {
+      sortedSpeakers.map(speaker => (
+        <Card className="rounded-3xl" variant="default">
+          <Card.Content className="p-5 sm:p-6">
+            <article class="grid gap-6 md:grid-cols-[12rem_minmax(0,1fr)] lg:grid-cols-[14rem_minmax(0,1fr)]">
+              <div class="space-y-4">
+                <img
+                  alt={`Portrait of ${speaker.data.name}`}
+                  class="aspect-square w-full rounded-2xl object-cover"
+                  loading="lazy"
+                  src={imageMap[speaker.data.image]}
+                />
+                {speaker.data.website ? (
+                  <Link href={speaker.data.website} rel="noopener noreferrer" target="_blank">
+                    Speaker website
+                    <Link.Icon />
+                  </Link>
+                ) : null}
+              </div>
+
+              <div class="space-y-5">
+                <header class="space-y-1">
+                  <Card.Title className="text-2xl font-bold tracking-tight">
+                    {speaker.data.name}
+                  </Card.Title>
+                  <Card.Description className="text-sm leading-6 text-muted">
+                    {speaker.data.affiliation}
+                  </Card.Description>
+                </header>
+
+                <div class="space-y-2">
+                  <p class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Invited talk</p>
+                  <h3 class="text-lg font-semibold leading-snug text-foreground">
+                    {speaker.data.talkTitle}
+                  </h3>
+                  <p class="text-sm leading-7 text-foreground">{speaker.data.abstract}</p>
+                </div>
+
+                <details class="group border-t border-separator pt-5">
+                  <summary
+                    class="cursor-[var(--cursor-interactive)] font-semibold text-foreground marker:text-muted"
+                  >
+                    Biography
+                  </summary>
+                  <p class="mt-3 text-sm leading-7 text-muted">{speaker.data.bio}</p>
+                </details>
+              </div>
+            </article>
+          </Card.Content>
+        </Card>
+      ))
+    }
   </div>
 </section>

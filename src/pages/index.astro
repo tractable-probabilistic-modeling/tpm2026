@@ -12,6 +12,12 @@ import Prose from '../components/ui/Prose.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+import chao from '../assets/images/chao.jpg';
+import eleonora from '../assets/images/eleonora.jpg';
+import giuseppe from '../assets/images/giuseppe.webp';
+import kyle from '../assets/images/kyle.jpeg';
+import steven from '../assets/images/steven.png';
+
 import adrianjavaloy from '../assets/organizers/adrianjavaloy.png';
 import antoniovergari from '../assets/organizers/antoniovergari.jpg';
 import christophstaudt from '../assets/organizers/christophstaudt.png';
@@ -55,6 +61,14 @@ const organizerImages = {
   'renatogeh.png': renatogeh.src,
 };
 
+const speakerImages = {
+  'chao.jpg': chao.src,
+  'eleonora.jpg': eleonora.src,
+  'giuseppe.webp': giuseppe.src,
+  'kyle.jpeg': kyle.src,
+  'steven.png': steven.src,
+};
+
 const { Content } = await render(homePage);
 ---
 
@@ -81,24 +95,25 @@ const { Content } = await render(homePage);
 
   <DatesSection site={siteEntry} />
 
-  {siteEntry.data.showSpeakers ? <SpeakersSection speakers={speakers} /> : null}
+  {
+    siteEntry.data.showSpeakers ? (
+      <SpeakersSection imageMap={speakerImages} speakers={speakers} />
+    ) : null
+  }
 
   <section class="grid gap-4 lg:grid-cols-2">
     <Card variant="default">
       <Card.Header>
         <Card.Title>Workshop format</Card.Title>
-        <Card.Description
-          >Hybrid participation with in-person delivery and remote access.</Card.Description
-        >
       </Card.Header>
       <Card.Content className="space-y-3 text-sm leading-6 text-muted">
         <p>
-          Presentations and talks will be held in person, streamed via Zoom, and recorded when
-          speakers agree. Accepted papers will have spotlight talks and poster sessions, with final
-          details published closer to the workshop.
+          TPM 2026 will be held in a hybrid format. Presentations and talks will be delivered in
+          person and streamed via Zoom. Accepted papers will be presented during two poster
+          sessions.
         </p>
         <Link href={toHref('/program')}>
-          Read the tentative program
+          View the program
           <Link.Icon />
         </Link>
       </Card.Content>
@@ -106,9 +121,6 @@ const { Content } = await render(homePage);
     <Card variant="default">
       <Card.Header>
         <Card.Title>Call for papers</Card.Title>
-        <Card.Description
-          >Novel research, retrospectives, and recently accepted TPM papers.</Card.Description
-        >
       </Card.Header>
       <Card.Content className="space-y-3 text-sm leading-6 text-muted">
         <p>
@@ -125,7 +137,11 @@ const { Content } = await render(homePage);
 
   {siteEntry.data.showProgram ? <ScheduleSection schedule={schedule} /> : null}
 
-  <PapersSection papers={papers} showAcceptedPapers={siteEntry.data.showAcceptedPapers} />
+  <PapersSection
+    papers={papers}
+    showAcceptedPapers={siteEntry.data.showAcceptedPapers}
+    summaryOnly
+  />
 
   <section class="space-y-5">
     <SectionHeading

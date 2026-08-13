@@ -8,7 +8,8 @@
     "forumUrl": "https://openreview.net/forum?id=HoArXIgROj",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Tabular data is more challenging to generate than text and images, due to its heterogeneous features and much lower sample sizes. On this task, diffusion-based models are the current state-of-the-art (SotA) model class, achieving almost perfect performance on commonly used benchmarks. In this paper, we question the perception of progress for tabular data generation. First, we highlight the limitations of current protocols to evaluate the fidelity of generated data, and advocate for alternative ones. Next, we revisit a simple baseline— hierarchical mixture models in the form of deep probabilistic circuits (PCs)—which delivers competitive or superior performance to SotA models for a fraction of the cost. PCs are the generative counterpart of decision forests, and as such can natively handle heterogeneous data as well as deliver tractable probabilistic generation and inference. Finally, in a rigorous empirical analysis we show that the apparent saturation of progress for SotA models is largely due to the use of inadequate metrics. As such, we highlight that there is still much to be done to generate realistic tabular data. Code available at https://github.com/april-tools/tabpc."
   },
   {
     "id": "dsdCkLkUkT",
@@ -19,7 +20,8 @@
     "forumUrl": "https://openreview.net/forum?id=dsdCkLkUkT",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Orthogonality constraints are ubiquitous in robust and probabilistic machine learning. Unfortunately, current optimizers are computationally expensive and do not scale to problems with hundreds or thousands of constraints. One notable exception is the Landing algorithm (Ablin et al., 2024) which, however comes at the expense of temporarily relaxing orthogonality. In this work, we revisit and improve on the ideas behind Landing, enabling the inclusion of modern adaptive optimizers while ensuring that orthogonal constraints are effectively met. Remarkably, these improvements come at little to no cost, and reduce the number of required hyperparemeters. Our algorithm POGO is fast and GPU-friendly,consisting of only 5 matrix products, and in practice maintains orthogonality at all times. On several challenging benchmarks, POGO greatly outperforms recent optimizers and shows it can optimize problems with thousands of orthogonal matrices in minutes while alternatives would take hours. As such, POGO sets a milestone to finally exploit orthogonality constraints in ML at scale. A public PyTorch implementation of POGO is available at github.com/adrianjav/pogo."
   },
   {
     "id": "jaSYUlHeub",
@@ -30,7 +32,8 @@
     "forumUrl": "https://openreview.net/forum?id=jaSYUlHeub",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Floating-point bit-string representations of parameters arede factobuilding blocks of neural networks, and their quantisation into lower precision formats is increasingly used to reduce their computational requirements. The information loss that quantisation induces in the model is, however, not well studied, and its detection relies on heuristics. We propose an information-theoretic approach for measuring quantisation-induced information loss. By modelling the probability distribution of the underlying floating-point bit-strings that parameters consist of, we can measure information loss as the change in differential entropy across quantisation levels. We empirically demonstrate that our method accurately captures quantisation-induced information loss in neural networks trained on small benchmark regression data sets by showing a strong correlation between our information loss metric and the observed performance degradation across quantisation levels."
   },
   {
     "id": "j1wLo06bmx",
@@ -41,7 +44,8 @@
     "forumUrl": "https://openreview.net/forum?id=j1wLo06bmx",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Chain-of-thought (CoT) traces are used across language model prompting, training, test-time inference, and interpretability, yet they are often modeled in task-specific ways. We propose treating CoT traces as discrete probabilistic programs and introduceCopper, a language in which reasoning steps are stochastic variables, control flow encodes dependencies, and answers are program outputs. Its finite reachability semantics reduces CoTrelated quantities to probabilistic queries over Copperprograms, placing CoT analysis within tractable probabilistic inference. This formulation recovers standard trace-likelihood quantities while exposing limitations of likelihood-only scoring. It also supports differentiable operators for composing likelihoods, confidence estimates, and feedback over trace structure. We present the language and its tractable semantics, establish several basic formal correspondences with standard CoT inference, and outline ongoing case studies using the framework to derive new test-time inference strategies and verification techniques."
   },
   {
     "id": "c7rXcoGJdq",
@@ -52,7 +56,8 @@
     "forumUrl": "https://openreview.net/forum?id=c7rXcoGJdq",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Neuro Symbolic (NeSy) AI combines deep neural networks (DNNs) with symbolic reasoning, but existing DNN accelerators are ill-suited for NeSy workloads. We present EinChip, a unified NeSy accelerator that expresses both neuro and symbolic models in Einstein Summation Notation (Einsum) and executes them on an approximate 6/24-bit logarithmic processing unit. A 4mm 2 16nm prototype achieves 4.6 TOPS/W on neuro tasks and 1.5 TOPS/W on symbolic tasks with only 0.1% accuracy loss."
   },
   {
     "id": "orwlLyK403",
@@ -63,7 +68,8 @@
     "forumUrl": "https://openreview.net/forum?id=orwlLyK403",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Existing decoding algorithms for large language models (LLMs) always rely on the information in the current step. We argue that future entropy is also essential for LLM decoding. However, this quantity is intractable for autoregressive LLMs, since it requires marginalizing over exponentially many continuations. We estimate it by computing the lower and upper bounds of it on a hidden Markov model (HMM), which is distilled as a surrogate of the LLM. By representing the HMM as probabilistic circuits, we make its latent-variable structure explicit and use it to derive an upper bound and a novel lower bound on the circuit entropy. On the HMM, these bounds yield efficient estimates of future entropy, which we leverage to implement entropy-guided decoding. On GSM8K and CSQA, this guidance improves math and logical reasoning over the decoding baselines in the Qwen2.5 and Mistral models, showing that estimated future entropy is effective for decoding."
   },
   {
     "id": "BufslLZ6Dx",
@@ -74,7 +80,8 @@
     "forumUrl": "https://openreview.net/forum?id=BufslLZ6Dx",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Computing exact probabilistic predictions under algebraic constraints is a notoriously hard task in high-dimensions. In this paper, we focus on a number of application scenarios, such as trajectory prediction, in which ahigh-dimensionaldis-tribution (possibly parameterized by a neural network) needs to be exactly integrated over alowerdimensionalalgebraic constraint. We can exploit this problem structure in a framework like PAL, where probability distributions and constraints are modeled independently, greatly speeding up the computation of the constraint probability. Our solution, named PcPAL, can capture intricate dependencies over variables while delivering guaranteed satisfaction of the constraints while retaining tractability, as shown on trajectory prediction tasks."
   },
   {
     "id": "wU9o6JyVKs",
@@ -85,7 +92,8 @@
     "forumUrl": "https://openreview.net/forum?id=wU9o6JyVKs",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Sentential decision diagrams (SDDs) are a tractable target language in knowledge compilation, with applications in probabilistic inference. The size of an SDD compiled from a Boolean formula is governed by a vtree, a binary tree over the formula’s variables. Since the number of vtrees grows super-exponentially in the number of variables, heuristics are required to identify vtrees that yield compact SDDs. This paper introduces two new static vtree heuristics that accept Boolean circuits of any form, not just those in conjunctive normal form. The fan-in heuristic adapts the fan-in variable ordering technique to vtrees by traversing the input circuit depth-first and grouping sibling variables into balanced sub-vtrees. The second, interaction graph heuristic, builds a weighted graph that captures the interactions between the circuit’s variables, recursively partitions it along minimal cuts, and merges the resulting partitions into a vtree. Both heuristics outperform the static baselines in terms of SDD size and compilation time. A combined variant further reduces SDD size and ranks as the strongest of the evaluated static heuristics."
   },
   {
     "id": "k6yXKPC7rE",
@@ -96,7 +104,8 @@
     "forumUrl": "https://openreview.net/forum?id=k6yXKPC7rE",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "We present a new technique for exact inference in hybrid probabilistic programs, those that make both discrete and continuous random choices. Our approach extends knowledge compilation, a popular technique for discrete inference, to support conjugate continuous latent variables and measurezero observations. We implement our approach in the Hybrid Pluck PPL, and find that it yields significant speedups relative to existing systems for exact inference in hybrid models."
   },
   {
     "id": "BbeIY57s2J",
@@ -107,7 +116,8 @@
     "forumUrl": "https://openreview.net/forum?id=BbeIY57s2J",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Evidential deep learning (EDL) is a lightweight alternative to Bayesian approaches for uncertainty quantification of neural net classifiers. Yet a recent critique shows that EDL’s estimates of epistemic uncertainty (EU) problematically plateau rather than approach zero as dataset size increases. In light of this critique, we set out to show that using an efficient last-layer Laplace approximation of the Bayesian posterior over weights outperforms EDL for EU-based out-of-distribution (OOD) detection. However, the current literature quantifies “epistemic uncertainty” with three mathematically different metrics based on mutual information, variance, and subjective logic uncertainty mass. First, we show empirically that for EDL, all three metrics fail to monotonically decrease as dataset size increases, unlike Laplace methods which show desired behavior. Second, evaluating OOD detection for image classifiers, we show that the mutual information metric with Laplace methods convincingly outperforms other metrics and other methods like EDL. Our results support the growing consensus that EDL fails to reliably quantify EU, and instead suggest Bayesian neural networks as a more promising alternative."
   },
   {
     "id": "GH1l6iufkk",
@@ -118,7 +128,8 @@
     "forumUrl": "https://openreview.net/forum?id=GH1l6iufkk",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Linear Independent Component Analysis (ICA) recovers jointly independent source signals from their linear mixtures. To achieve this, classical ICA algorithms attempt to maximize non-Gaussianity, measured by negentropy, which is linked to independence by information theory. Because exact negentropy optimization is intractable, they rely on proxy contrast functions, such as fourth-order cumulants, and parametric log-likelihoods. We propose instead to measure non-Gaussianity using the squared L2-Wasserstein distance ( W 2 2 ) to a standard Gaussian. We show that the Wasserstein distance between a standard normal distribution and linear projections of the data is maximized when the projection recovers an independent component. Based on this observation, we propose the OT-ICA algorithm, which finds this projection by gradient-based optimization. Empirical evaluation on simulated data shows that OT-ICA outperforms proxy-based methods for different distributions of the latent variables. Application to EEG artifact removal and econometric price discovery confirm OT-ICA can be used for applied ICA tasks without distributional assumptions."
   },
   {
     "id": "N9TZMUj2NS",
@@ -129,7 +140,8 @@
     "forumUrl": "https://openreview.net/forum?id=N9TZMUj2NS",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Probabilistic circuits (PCs) are a class of probabilistic models that guarantee exact and efﬁcient inference of various probabilistic queries by enforcing certain structural properties. Despite recent advances in learning PCs, existing methods are mostly limited to ofﬂine batch learning. In particular, while tractable inference of many queries requires determinism, there are no online structure learners for deterministic PCs, to the best of our knowledge. To bridge this gap, we introduce an online incremental structure learning framework for deterministic and structured-decomposable PCs. We use distribution-preserving splits to dynamically increase the expressivity of the PC structure and merge, when necessary, to manage size blowup, both leveraging tractable heuristics and closed-form parameter updates using the circuit properties. We pair this with a tunable decay factor to systematically adapt to distribution shifts. Empirical evaluations on density estimation benchmark datasets show that our method achieves stable training through non-static data streams and offers robust adaptation via parameter decay."
   },
   {
     "id": "vhQDmsiKm1",
@@ -140,7 +152,8 @@
     "forumUrl": "https://openreview.net/forum?id=vhQDmsiKm1",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Probabilistic circuits (PCs) can model complex joint distributions while supporting exact and efficient computation of many inference queries. However, standard likelihood-based PC learning is vulnerable to overfitting and fragile generalization when confronted with data noise, small sample sizes, or distribution shifts. This can be mitigated using distributionally-robust optimization which consider worst-case distributions within a Wasserstein ball of the empirical distribution, but current methods are limited to training a model from scratch in this framework. Instead, we propose PETER: a novel, data-free post-training framework designed to robustify pre-trained PCs against distribution shifts without retraining from scratch. Empirical evaluations across multiple density estimation benchmarks demonstrate that PETER effectively robustifies baseline models against both random and adversarial perturbations, achieving competitive or superior performance to data-dependent robust learning baselines. Code: https://github.com/aciotinga/PeTeR"
   },
   {
     "id": "nDJdDrWaO3",
@@ -151,7 +164,8 @@
     "forumUrl": "https://openreview.net/forum?id=nDJdDrWaO3",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Adversarial robustness is closely connected to how well classifiers capture the structure of the data distribution, motivating renewed interest in generative classifiers. We study this connection for matrix product state Born machines, tensor network models whose tractable normalization makes the learned joint density directly accessible. This tractability enables two things at once: detection and purification of adversarial inputs from the model’s own density, and a continuous interpolation between discriminative and generative training that injects generative regularization into a classifier with no architectural changes. We propose two purification strategies that reuse the same trained model. Across a synthetic spirals dataset and a larger-scale MNIST benchmark, even a small generative component improves the learned density and strengthens density-based defenses over purely discriminative training. These results are a proof of principle that tensor network generative classifiers can unify robust classification, likelihood estimation, and purification within a single tractable model."
   },
   {
     "id": "12M7z6mhOV",
@@ -162,7 +176,8 @@
     "forumUrl": "https://openreview.net/forum?id=12M7z6mhOV",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Probabilistic neurosymbolic models combine neural perception with symbolic reasoning, but exact inference can become costly when logical rules overlap. We introduce Rule-Selection Surrogates, a post-hoc approximation method that adds a categorical neural selector over the original rules. This transforms expensive disjunctive inference into exact inference in a tractable surrogate model, requiring only a linear-time mixture computation over rules and concepts. By adding a single always-true rule, the surrogate can represent any target Bernoulli marginal pointwise. The selector is trained by distillation from an exact teacher model, while the concept predictor and symbolic rule set remain fixed. Experiments on MNIST-Addition show substantial reductions in inference time and memory usage with low approximation error, suggesting that rule-selection surrogates offer an efficient and interpretable route to scalable approximate neurosymbolic inference."
   },
   {
     "id": "CwQQV9Dpg3",
@@ -173,7 +188,8 @@
     "forumUrl": "https://openreview.net/forum?id=CwQQV9Dpg3",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Martingale posteriors are a post-Bayesian approach that quantifies uncertainty by replacing the prior and likelihood with a predictive rule, imputing the unobserved population by predictive resampling. Existing constructions largely focus on univariate outcomes, and multivariate extensions factorise the joint predictive autoregressively, scaling poorly with dimension. We address this gap with a copula representation of the joint predictive rule: each coordinate evolves through its own univariate recursion, and a single copula, calibrated once to the data, carries the dependence between them. Because the marginals are decoupled from the dependence, they can be fitted and resampled in parallel giving a scheme that is both more scalable and tractable. We demonstrate the resulting substantial runtime advantage in one synthetic and one real-data application."
   },
   {
     "id": "xjQmkFjNd4",
@@ -184,7 +200,8 @@
     "forumUrl": "https://openreview.net/forum?id=xjQmkFjNd4",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Probabilistic circuits are a powerful class of models for tractable probabilistic inference and expressive generative modeling. Recent systems have made these models practical at scale by tensorizing circuit evaluation and targeting acceleratorbacked array frameworks. Yet this computation has structure that standard deep learning compilers often fail to exploit. Thus, we propose extended einsum as an intermediate representation for tensorized probabilistic circuits. This enables us to implement several optimizations from the growing ecosystem of tools around probabilistic circuits and einsum programs. The optimizations are applied at a backend-independent level before lowering to PyTorch, JAX, or specialized kernels. Translating circuits from the cirkit library to our intermediate representation, we achieve median speedups of 1.38× for CP layers and 1.16× for Tucker layers, with per-configuration medians ranging from 1.08× to 1.49×. These results demonstrate that extended einsum is a viable IR for optimizing tensorized probabilistic circuits. Visit https://extended.einsum.org for more information and code."
   },
   {
     "id": "cW4dxuzTTM",
@@ -195,7 +212,8 @@
     "forumUrl": "https://openreview.net/forum?id=cW4dxuzTTM",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "The expressive efficiency of PC classes has been studied extensively in the exact case and, although to a lesser degree, the approximate case. However, these results are mainly concerned with the theoretical ability of circuits to compactly represent functions. Statistical guarantees, such as sample complexity, for learning PCs remain largely unexplored. In this paper, we first prove a lower bound, linear in the size of the PC, on the number of samples needed forany learning algorithmto guarantee bounded statistical distance (Hellinger, reverse Kullback-Leibler, or total variation) with high probability. Next, for learning the parameters of decomposable PCs under known structure, we also show a matching upper bound on the number of samples in the case of the Hellinger distance and reverse KL divergence. Lastly, in the agnostic setting without the known-structure assumption, we provide an instance-specific statistical upper bound on the total variation distance using the Good-Turing denoising estimator, which approaches the irreducible distance due to PC structure as the number of samples increases."
   },
   {
     "id": "QngaZJhw3v",
@@ -206,7 +224,8 @@
     "forumUrl": "https://openreview.net/forum?id=QngaZJhw3v",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Tractable probabilistic models (TPMs) are increasingly being applied in language modeling tasks, such as controlling the generation of large language models (LMs) to satisfy logical or semantic constraints. However, a thus-far overlooked aspect is the training procedure of the TPM, which optimizes for data likelihood rather than the downstream task. This raises a central question: does improving data likelihood necessarily improve downstream generation quality? In this work, we find that likelihood-trained TPMs can result in failed generations due to overly large corrections to the LM’s logits. To address this, we train TPMs with LM-aligned objectives, including an ELBO-based objective and an MSE-based distillation objective. By learning directly from the LM rather than optimizing only for data likelihood, our approach produces TPMs that better align with the LM tokenprobability space. On a detoxification task, our results show these models avoid degeneration, maintain fluency under strong guidance, and enable stronger detoxification."
   },
   {
     "id": "TPD419MzWl",
@@ -217,7 +236,8 @@
     "forumUrl": "https://openreview.net/forum?id=TPD419MzWl",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Steering a language model towards satisfying a constraint requires marginalizing the probability that a future continuation will be valid. Hidden Markov models have proven effective as tractable surrogates for such marginalization, but existing methods only handle constraints expressible as regular languages. We extend this line of work to LL(1) grammars, a widely used subset of contextfree grammars. Unfortunately, even with a tractable surrogate, constrained generation with unambiguous grammars is still cubic time in the sequence length. We hence developCTRL-CFG, a lineartime approximation that marginalizes only over a fixed look-ahead window. We demonstrate the effectiveness of CTRL-CFG on chemistry-grammar conditioned molecule generation."
   },
   {
     "id": "FflbKkBH0z",
@@ -228,7 +248,8 @@
     "forumUrl": "https://openreview.net/forum?id=FflbKkBH0z",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Probabilistic logic programming offers a principled way of combining deep learning and formal reasoning, but its inference is #P -hard. A simple factorization assumption introduced by TractOR makes probabilistic reasoning tractable for large relations at the cost of limiting expressivity. We reinterpret this approach using Boolean tensor factorizations to identify and resolve three practical limitations: it is restricted to symmetric relations, expresses only a limited class of distributions, and cannot reason across components."
   },
   {
     "id": "w72bKopyg3",
@@ -239,6 +260,7 @@
     "forumUrl": "https://openreview.net/forum?id=w72bKopyg3",
     "videoUrl": null,
     "session": null,
-    "placeholder": false
+    "placeholder": false,
+    "abstract": "Mechanistic interpretability aims to break models into meaningful parts, and verifying that two such parts implement the same computation is a prerequisite. Existing similarity measures evaluate either empirical behaviour, leaving them blind to out-of-distribution mechanisms, or basis-dependent parameters, disregarding weight-space symmetries. We introduce tensor similarity, a weight-based metric for multilinear models, whose weights decompose into tensor networks of special structure. Not every network belongs to this class, but these models train and perform like standard ones. The metric is invariant to weight-space symmetries and captures global functional equivalence including cross-layer mechanisms, and we propose and motivate an efficient recursive algorithm to compute it. Empirically, tensor similarity tracks functional training dynamics, such as grokking and backdoor insertion, with higher fidelity than existing metrics. This turns measuring similarity and verifying faithfulness into an algebraic problem rather than one of empirical approximation."
   }
 ]
